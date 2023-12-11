@@ -11,20 +11,20 @@ class MainTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.hidesBackButton = true
         //initialise the views that we want on our main tab bar
         let vc1 = UINavigationController(rootViewController: FeedViewController())
         let vc2 = UINavigationController(rootViewController: SearchViewController())
-        let vc3 = UINavigationController(rootViewController: DetailedViewController())
+        let vc3 = UINavigationController(rootViewController: ProfileViewController())
         
         //set properties of the tab bar items
         vc1.tabBarItem.image = UIImage(systemName: "house")
         vc2.tabBarItem.image = UIImage(systemName: "magnifyingglass")
-        vc3.tabBarItem.image = UIImage(systemName: "arrow.forward")
+        vc3.tabBarItem.image = UIImage(systemName: "person")
         
         vc1.title = "Feed"
         vc2.title = "Search"
-        vc3.title = "Detail"
+        vc3.title = "Profile"
         
         //remove this to see how the colour of the icons and titles change
         tabBar.tintColor = .label
