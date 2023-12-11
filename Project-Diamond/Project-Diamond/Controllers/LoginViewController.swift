@@ -15,9 +15,13 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func loginButtonPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToMainTab", sender: self)
-
+    @IBAction func ButtonPressed(_ sender: UIButton) {
+        
+        if sender.titleLabel!.text == "Login" {
+            self.performSegue(withIdentifier: "loginToMainTab", sender: self)
+        }
+        else {self.performSegue(withIdentifier: "loginToRegister", sender: self)}
     }
+    
     
 }

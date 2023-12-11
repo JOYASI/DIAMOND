@@ -18,10 +18,10 @@ class WelcomeViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         
         if sender.titleLabel?.text == "Go to Login" {
-            self.performSegue(withIdentifier: "goToLogin", sender: self)
+            self.performSegue(withIdentifier: "welcomeToLogin", sender: self)
         }
         else {
-            self.performSegue(withIdentifier: "goToRegister", sender: self)
+            self.performSegue(withIdentifier: "welcomeToRegister", sender: self)
         }
         
     }

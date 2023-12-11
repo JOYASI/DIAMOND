@@ -59,8 +59,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <segue destination="O8Y-S5-VCv" kind="presentation" identifier="goToRegister" id="eIB-rc-jlA"/>
-                        <segue destination="utY-CA-uQ3" kind="presentation" identifier="goToLogin" id="4sP-Az-4Hu"/>
+                        <segue destination="O8Y-S5-VCv" kind="presentation" identifier="welcomeToRegister" id="eIB-rc-jlA"/>
+                        <segue destination="utY-CA-uQ3" kind="presentation" identifier="welcomeToLogin" id="4sP-Az-4Hu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEL-5M-tSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -106,7 +106,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="loginButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="WYR-xw-rvn"/>
+                                    <action selector="ButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="WYR-xw-rvn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOL-Uq-HCN">
@@ -119,13 +119,17 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="EXS-Iw-5Ba"/>
+                                    <action selector="ButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="EXS-Iw-5Ba"/>
+                                    <action selector="buttonPressed:" destination="O8Y-S5-VCv" eventType="touchUpInside" id="ho4-FX-3ZL"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6zJ-FZ-Ofl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <segue destination="utY-CA-uQ3" kind="presentation" identifier="registerToLogin" id="ZpW-fs-LKp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmN-T7-vF8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,7 +155,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="loginButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="BQe-OX-7kC"/>
+                                    <action selector="ButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="BQe-OX-7kC"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhz-n4-mcF">
@@ -177,7 +181,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="zUR-ua-bOu"/>
+                                    <action selector="ButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="nmu-Ak-1z0"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jfk-3C-nFm">
@@ -191,7 +195,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <segue destination="jwb-cb-GeS" kind="presentation" identifier="goToMainTab" id="2aX-XI-ED2"/>
+                        <segue destination="jwb-cb-GeS" kind="presentation" identifier="loginToMainTab" id="2aX-XI-ED2"/>
+                        <segue destination="O8Y-S5-VCv" kind="presentation" identifier="loginToRegister" id="wj7-yR-FjZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxS-9S-udW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -213,6 +218,10 @@
             <point key="canvasLocation" x="-799" y="32"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZpW-fs-LKp"/>
+        <segue reference="wj7-yR-FjZ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
