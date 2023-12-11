@@ -16,7 +16,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToHomePage", sender: self)
+        self.performSegue(withIdentifier: "goToMainTab", sender: self)
+
     }
     
 }

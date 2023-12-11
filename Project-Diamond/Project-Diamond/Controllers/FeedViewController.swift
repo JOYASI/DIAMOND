@@ -1,5 +1,5 @@
 //
-//  DetailedViewController.swift
+//  HomeViewController.swift
 //  Project-Diamond
 //
 //  Created by JOYASI on 09/12/2023.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class DetailedViewController: UIViewController {
+class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBlue
-        
+        view.backgroundColor = .systemBackground
+
         // Do any additional setup after loading the view.
     }
     

@@ -1,18 +1,17 @@
 //
-//  HomeViewController.swift
+//  SearchViewController.swift
 //  Project-Diamond
 //
-//  Created by JOYASI on 09/12/2023.
+//  Created by JOYASI on 10/12/2023.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
-
+        view.backgroundColor = .systemCyan
         // Do any additional setup after loading the view.
     }
     
