@@ -21,17 +21,16 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+        
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
         if let email = emailTextField.text, let password = passwordTextField.text {
             
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-                if let e = error {
-                    print(e.localizedDescription)
-                } else {
+                if let e = error {print(e.localizedDescription)}
+                else {
                     //successful login
-                    self.performSegue(withIdentifier: "loginToMainTab", sender: self)
+                    self.performSegue(withIdentifier: K.loginSegue, sender: self)
                 }
             }
             

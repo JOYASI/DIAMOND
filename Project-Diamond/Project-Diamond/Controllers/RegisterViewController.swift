@@ -31,7 +31,7 @@ class RegisterViewController: UIViewController {
                 }
                 else {
                     //user created successfully - let's login
-                    self.performSegue(withIdentifier: "registerToMainTab", sender: self)
+                    self.performSegue(withIdentifier: K.registerSegue, sender: self)
                     print("successful")
                 }
             }
