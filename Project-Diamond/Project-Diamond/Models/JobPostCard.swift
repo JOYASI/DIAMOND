@@ -7,6 +7,10 @@
 
 import Foundation
 
+//here we're creating the job post model that will be seen in the search
 struct JobPostCard {
+    
+    let companyName: String
+    let roleName: String
     
 }

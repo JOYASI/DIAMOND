@@ -23,5 +23,7 @@ struct K {
     static let loginSegue = "loginToMainTab"
     static let welcomeLoginSegue = "welcomeToLogin"
     static let welcomeRegisterSegue = "welcomeToRegister"
+    //this is the identifier of the prototype cell in the tableView in the SearchView
+    static let cellIdentifier = "ReusableCell"
     
 }
