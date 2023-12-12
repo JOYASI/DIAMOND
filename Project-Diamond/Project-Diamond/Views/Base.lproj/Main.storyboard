@@ -73,7 +73,7 @@
             <objects>
                 <viewController id="O8Y-S5-VCv" customClass="RegisterViewController" customModule="Project_Diamond" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cmn-eD-7Ki">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create an Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVz-E8-oLR">
@@ -93,7 +93,7 @@
                                 <rect key="frame" x="68" y="404" width="256" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mto-9T-bGI">
                                 <rect key="frame" x="121" y="514" width="151" height="48"/>
@@ -107,7 +107,8 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="WYR-xw-rvn"/>
+                                    <action selector="loginButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="WYR-xw-rvn"/>
+                                    <action selector="registerButtonPressed:" destination="O8Y-S5-VCv" eventType="touchUpInside" id="0r5-AZ-9JK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOL-Uq-HCN">
@@ -120,8 +121,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="EXS-Iw-5Ba"/>
-                                    <action selector="buttonPressed:" destination="O8Y-S5-VCv" eventType="touchUpInside" id="ho4-FX-3ZL"/>
+                                    <segue destination="utY-CA-uQ3" kind="show" id="hVp-Ue-Ryr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -130,7 +130,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="cWv-uA-Eae"/>
                     <connections>
-                        <segue destination="jwb-cb-GeS" kind="show" id="JqX-EC-TBt"/>
+                        <outlet property="emailTextField" destination="keF-aI-1up" id="rXP-zD-qsX"/>
+                        <outlet property="passwordTextField" destination="uIv-FS-334" id="vWL-p0-OZW"/>
+                        <segue destination="jwb-cb-GeS" kind="show" identifier="registerToMainTab" id="JqX-EC-TBt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmN-T7-vF8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -142,7 +144,7 @@
             <objects>
                 <viewController id="utY-CA-uQ3" customClass="LoginViewController" customModule="Project_Diamond" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Njv-ps-Jop">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvK-Nx-z4Z">
@@ -157,10 +159,10 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="BQe-OX-7kC"/>
+                                    <action selector="loginButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="BQe-OX-7kC"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhz-n4-mcF">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhz-n4-mcF">
                                 <rect key="frame" x="68" y="270" width="256" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -183,7 +185,6 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="utY-CA-uQ3" eventType="touchUpInside" id="nmu-Ak-1z0"/>
                                     <segue destination="O8Y-S5-VCv" kind="show" id="Cgm-wk-edU"/>
                                 </connections>
                             </button>
@@ -191,7 +192,7 @@
                                 <rect key="frame" x="68" y="389" width="256" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ray-Px-pEx"/>
@@ -199,6 +200,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="s7G-iE-bDS"/>
                     <connections>
+                        <outlet property="emailTextField" destination="hhz-n4-mcF" id="Oxh-Fc-8b8"/>
+                        <outlet property="passwordTextField" destination="Jfk-3C-nFm" id="Trk-br-l4u"/>
                         <segue destination="jwb-cb-GeS" kind="show" identifier="loginToMainTab" id="2aX-XI-ED2"/>
                     </connections>
                 </viewController>
@@ -216,32 +219,38 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="sq5-jx-j6W" kind="relationship" relationship="viewControllers" id="g90-EZ-Kb3"/>
+                        <segue destination="IP9-o8-W8z" kind="relationship" relationship="viewControllers" id="vaU-6d-bQ9"/>
+                        <segue destination="zAT-WY-lbs" kind="relationship" relationship="viewControllers" id="9ye-ya-q9o"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrz-S2-j7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1309" y="-692"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Feed-->
         <scene sceneID="m0g-Ok-vjc">
             <objects>
                 <viewController id="sq5-jx-j6W" customClass="FeedViewController" customModule="Project_Diamond" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hZT-YZ-yrv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="04e-Ak-y7g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" id="lj0-w9-9kT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yfw-fr-Red" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1828" y="800"/>
+            <point key="canvasLocation" x="2340" y="-1420"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="Pea-l7-vUb">
             <objects>
                 <viewController id="IP9-o8-W8z" customClass="SearchViewController" customModule="Project_Diamond" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PPF-UW-zVG">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Z4j-8T-upM">
@@ -263,24 +272,28 @@
                         <viewLayoutGuide key="safeArea" id="2mC-lY-LUv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="CUt-SJ-KWR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Q6-BY-p9L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-799.23664122137404" y="800"/>
+            <point key="canvasLocation" x="2340" y="-692"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Item-->
         <scene sceneID="AyQ-fj-bC2">
             <objects>
-                <viewController id="zAT-WY-lbs" customClass="ProfileViewController" customModule="Project_Diamond" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Item" id="zAT-WY-lbs" customClass="ProfileViewController" customModule="Project_Diamond" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GuY-S5-Oce">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmP-0x-lI8">
-                                <rect key="frame" x="257" y="86" width="81" height="42"/>
+                                <rect key="frame" x="219" y="110" width="130" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="LogOut"/>
+                                <buttonConfiguration key="configuration" style="plain" title="LogOut">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="systemPinkColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="logOutPressed:" destination="zAT-WY-lbs" eventType="touchUpInside" id="geb-YE-XKK"/>
                                 </connections>
@@ -289,10 +302,12 @@
                         <viewLayoutGuide key="safeArea" id="Ywa-s8-1S6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="akt-hI-aSS"/>
+                    <navigationItem key="navigationItem" id="IgA-wd-nae"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJ8-jm-F31" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="235.87786259541983" y="800"/>
+            <point key="canvasLocation" x="2340" y="46"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vmj-Pt-Cod">
@@ -314,15 +329,22 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JqX-EC-TBt"/>
-        <segue reference="eIB-rc-jlA"/>
+        <segue reference="2aX-XI-ED2"/>
+        <segue reference="hVp-Ue-Ryr"/>
+        <segue reference="Cgm-wk-edU"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

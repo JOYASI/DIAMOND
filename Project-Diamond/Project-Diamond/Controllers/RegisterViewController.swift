@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,12 +21,22 @@ class RegisterViewController: UIViewController {
     }
     
     
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        if sender.titleLabel!.text != "Sign Up" {
-            self.performSegue(withIdentifier: "registerToLogin", sender: self)
+    @IBAction func registerButtonPressed(_ sender: UIButton) {
+        
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print(e.localizedDescription)
+                }
+                else {
+                    //user created successfully - let's login
+                    self.performSegue(withIdentifier: "registerToMainTab", sender: self)
+                    print("successful")
+                }
+            }
+            
         }
-        else {
-            //for later but this is if Sign up button is pressed}
-        }
+        
     }
 }
