@@ -24,6 +24,10 @@ struct K {
     static let welcomeLoginSegue = "welcomeToLogin"
     static let welcomeRegisterSegue = "welcomeToRegister"
     //this is the identifier of the prototype cell in the tableView in the SearchView
-    static let cellIdentifier = "ReusableCell"
+    static let jobPostCellIdentifier = "jobPostReusableCell"
+    static let feedPostCellIdentifier = "feedPostReusableCell"
+    
+    static let jobPostCellNibName = "JobPostCell"
+    static let feedPostCellNibName = "FeedPostCell"
     
 }

@@ -22,6 +22,11 @@
 		11E0B4742B2796BC00BEB6B0 /* JobPostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0B4732B2796BC00BEB6B0 /* JobPostCard.swift */; };
 		11E0B4782B27D5F500BEB6B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E0B4772B27D5F500BEB6B0 /* GoogleService-Info.plist */; };
 		11E0B47A2B28001B00BEB6B0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0B4792B28001B00BEB6B0 /* Constants.swift */; };
+		11E0B47D2B28DFF600BEB6B0 /* JobPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0B47B2B28DFF600BEB6B0 /* JobPostCell.swift */; };
+		11E0B47E2B28DFF600BEB6B0 /* JobPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E0B47C2B28DFF600BEB6B0 /* JobPostCell.xib */; };
+		11E0B4822B29C17700BEB6B0 /* FeedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0B4802B29C17700BEB6B0 /* FeedPostCell.swift */; };
+		11E0B4832B29C17700BEB6B0 /* FeedPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E0B4812B29C17700BEB6B0 /* FeedPostCell.xib */; };
+		11E0B4852B29C37600BEB6B0 /* FeedPostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0B4842B29C37600BEB6B0 /* FeedPostCard.swift */; };
 		66F133B0A9C977FE40008D1A /* Pods_Project_Diamond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D80561C8575FCA69A1A13 /* Pods_Project_Diamond.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +48,11 @@
 		11E0B4732B2796BC00BEB6B0 /* JobPostCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPostCard.swift; sourceTree = "<group>"; };
 		11E0B4772B27D5F500BEB6B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11E0B4792B28001B00BEB6B0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		11E0B47B2B28DFF600BEB6B0 /* JobPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPostCell.swift; sourceTree = "<group>"; };
+		11E0B47C2B28DFF600BEB6B0 /* JobPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobPostCell.xib; sourceTree = "<group>"; };
+		11E0B4802B29C17700BEB6B0 /* FeedPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostCell.swift; sourceTree = "<group>"; };
+		11E0B4812B29C17700BEB6B0 /* FeedPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedPostCell.xib; sourceTree = "<group>"; };
+		11E0B4842B29C37600BEB6B0 /* FeedPostCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostCard.swift; sourceTree = "<group>"; };
 		698600D26598389885A8360E /* Pods-Project-Diamond.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Diamond.release.xcconfig"; path = "Target Support Files/Pods-Project-Diamond/Pods-Project-Diamond.release.xcconfig"; sourceTree = "<group>"; };
 		C43D80561C8575FCA69A1A13 /* Pods_Project_Diamond.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Diamond.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D72F64BB2688E6671CF396 /* Pods-Project-Diamond.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Diamond.debug.xcconfig"; path = "Target Support Files/Pods-Project-Diamond/Pods-Project-Diamond.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				11E0B4732B2796BC00BEB6B0 /* JobPostCard.swift */,
+				11E0B4842B29C37600BEB6B0 /* FeedPostCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,6 +116,10 @@
 			isa = PBXGroup;
 			children = (
 				11E0B4512B237E0B00BEB6B0 /* Main.storyboard */,
+				11E0B47B2B28DFF600BEB6B0 /* JobPostCell.swift */,
+				11E0B47C2B28DFF600BEB6B0 /* JobPostCell.xib */,
+				11E0B4802B29C17700BEB6B0 /* FeedPostCell.swift */,
+				11E0B4812B29C17700BEB6B0 /* FeedPostCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,8 +226,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				11E0B4582B237E0C00BEB6B0 /* LaunchScreen.storyboard in Resources */,
+				11E0B4832B29C17700BEB6B0 /* FeedPostCell.xib in Resources */,
 				11E0B4782B27D5F500BEB6B0 /* GoogleService-Info.plist in Resources */,
 				11E0B4552B237E0C00BEB6B0 /* Assets.xcassets in Resources */,
+				11E0B47E2B28DFF600BEB6B0 /* JobPostCell.xib in Resources */,
 				11E0B4532B237E0B00BEB6B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +292,9 @@
 				11E0B46E2B251F3E00BEB6B0 /* RegisterViewController.swift in Sources */,
 				11E0B44E2B237E0B00BEB6B0 /* SceneDelegate.swift in Sources */,
 				11E0B46C2B251F3000BEB6B0 /* WelcomeViewController.swift in Sources */,
+				11E0B4852B29C37600BEB6B0 /* FeedPostCard.swift in Sources */,
+				11E0B4822B29C17700BEB6B0 /* FeedPostCell.swift in Sources */,
+				11E0B47D2B28DFF600BEB6B0 /* JobPostCell.swift in Sources */,
 				11E0B4692B24E1A000BEB6B0 /* LoginViewController.swift in Sources */,
 				11E0B4632B24DC7200BEB6B0 /* FeedViewController.swift in Sources */,
 			);
@@ -435,8 +455,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,8 +484,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

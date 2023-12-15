@@ -37,12 +37,18 @@ class SearchViewController: UIViewController {
 
     ]
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-            
-        // Do any additional setup after loading the view.
+        
+        //the xib file that has the cell template for the jobPosts tableView needs to be intialised
+        
+        //the nibName is the name of the .xib file - (it's called nib because that was the old name now it's xib)
+        //this is just registering the cell, we have to actually create it too
+        tableView.register(UINib(nibName: K.jobPostCellNibName, bundle: nil), forCellReuseIdentifier: K.jobPostCellIdentifier)
+       
     }
 
 }
@@ -57,8 +63,10 @@ extension SearchViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
-        cell.textLabel?.text = jobPosts[indexPath.row].companyName
+        //for the cell to have the properties that the JobPostCell has, we have to use as! (explained in more detail later) followed by the name of the class.
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.jobPostCellIdentifier, for: indexPath) as! JobPostCell
+        cell.companyNameLabel.text = jobPosts[indexPath.row].companyName
+        cell.roleNameLabel.text = jobPosts[indexPath.row].roleName
         //print(jobPosts[indexPath.row].companyName)
         return cell
         
@@ -69,4 +77,5 @@ extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //this code will be executed when one of the cells is pressed on -> needed for the detailed view later on
     }
+
 }
