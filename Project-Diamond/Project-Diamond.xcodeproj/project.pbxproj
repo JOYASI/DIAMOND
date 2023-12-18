@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11ADF9D12B2BF21C0012A85A /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11ADF9D02B2BF21C0012A85A /* DetailedViewController.swift */; };
 		11E0B44C2B237E0B00BEB6B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0B44B2B237E0B00BEB6B0 /* AppDelegate.swift */; };
 		11E0B44E2B237E0B00BEB6B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0B44D2B237E0B00BEB6B0 /* SceneDelegate.swift */; };
 		11E0B4532B237E0B00BEB6B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E0B4512B237E0B00BEB6B0 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11ADF9D02B2BF21C0012A85A /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		11E0B4482B237E0B00BEB6B0 /* Project-Diamond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Diamond.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E0B44B2B237E0B00BEB6B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11E0B44D2B237E0B00BEB6B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11ADF9CD2B2BE7830012A85A /* CoreTabs */ = {
+			isa = PBXGroup;
+			children = (
+				11E0B4622B24DC7200BEB6B0 /* FeedViewController.swift */,
+				11E0B4712B26856000BEB6B0 /* SearchViewController.swift */,
+				11E0B4682B24E1A000BEB6B0 /* LoginViewController.swift */,
+			);
+			path = CoreTabs;
+			sourceTree = "<group>";
+		};
+		11ADF9CE2B2BE7A40012A85A /* Entrance */ = {
+			isa = PBXGroup;
+			children = (
+				11E0B4642B24DC8300BEB6B0 /* ProfileViewController.swift */,
+				11E0B46B2B251F3000BEB6B0 /* WelcomeViewController.swift */,
+				11E0B46D2B251F3E00BEB6B0 /* RegisterViewController.swift */,
+			);
+			path = Entrance;
+			sourceTree = "<group>";
+		};
+		11ADF9CF2B2BF1FE0012A85A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				11ADF9D02B2BF21C0012A85A /* DetailedViewController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		11E0B43F2B237E0B00BEB6B0 = {
 			isa = PBXGroup;
 			children = (
@@ -127,12 +157,9 @@
 		11E0B4612B237F7700BEB6B0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				11E0B4622B24DC7200BEB6B0 /* FeedViewController.swift */,
-				11E0B4642B24DC8300BEB6B0 /* ProfileViewController.swift */,
-				11E0B4712B26856000BEB6B0 /* SearchViewController.swift */,
-				11E0B4682B24E1A000BEB6B0 /* LoginViewController.swift */,
-				11E0B46B2B251F3000BEB6B0 /* WelcomeViewController.swift */,
-				11E0B46D2B251F3E00BEB6B0 /* RegisterViewController.swift */,
+				11ADF9CF2B2BF1FE0012A85A /* Other */,
+				11ADF9CE2B2BE7A40012A85A /* Entrance */,
+				11ADF9CD2B2BE7830012A85A /* CoreTabs */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -285,6 +312,7 @@
 			files = (
 				11E0B44C2B237E0B00BEB6B0 /* AppDelegate.swift in Sources */,
 				11E0B47A2B28001B00BEB6B0 /* Constants.swift in Sources */,
+				11ADF9D12B2BF21C0012A85A /* DetailedViewController.swift in Sources */,
 				11E0B4742B2796BC00BEB6B0 /* JobPostCard.swift in Sources */,
 				11E0B4702B26841300BEB6B0 /* MainTabBarViewController.swift in Sources */,
 				11E0B4652B24DC8300BEB6B0 /* ProfileViewController.swift in Sources */,
