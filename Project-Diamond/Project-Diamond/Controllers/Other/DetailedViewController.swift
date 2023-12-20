@@ -9,6 +9,9 @@ import UIKit
 
 class DetailedViewController: UIViewController {
 
+    
+    @IBOutlet weak var middleStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -27,164 +30,78 @@ class DetailedViewController: UIViewController {
     }()
     
     
-    //step 2 is to create the content view
+    //step 2 is to create the content view and everything that will be shown
     let contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    //step 3 is to create the UI
+    //subtitle labels
     
-    //look at drawing to see how it was split up - we'll split the content view into 2 parts -> the top view and the middle view
-    
-    
-    //TOP VIEW
-    let topView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let horizontalStackTopView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let companyLogo: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(systemName: "briefcase.fill")
-        image.contentMode = .scaleAspectFit
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
-    }()
-    
-    let companyNameLabel: UILabel = {
+    let roleResponsibilityTitle: UILabel = {
         let label = UILabel()
-        label.text = "JPMorgan"
+        label.text = "Role Responsibilities"
+        label.font = UIFont(name: "Helvetica Neue", size: 25)
+        label.textColor = .systemCyan
         label.numberOfLines = 0
-        return label
-    }()
-    
-    let roleNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Analyst"
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    //MIDDLEVIEW
-    let middleView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let horizontalStackMiddleView: UIStackView = {
-        
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-        
-    }()
-    
-    let leftLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.he leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont"
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    let rightLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Analyst"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.lineBreakMode = .byWordWrapping
+        return label
+    }()
+        
+    let hardRequirementsTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Hard Requirements"
+        label.font = UIFont(name: "Helvetica Neue", size: 25)
+        label.textColor = .systemCyan
         label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    //CONFIGURATIONS
+    let softRequirementsTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Soft Requirements"
+        label.font = UIFont(name: "Helvetica Neue", size: 30)
+        label.textColor = .systemCyan
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-    func configureTopView() {
-        
-        contentView.addSubview(topView)
-        //constrain the content and the top view
-        NSLayoutConstraint.activate([
-            topView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            topView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
-            topView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
-            topView.heightAnchor.constraint(lessThanOrEqualToConstant: 150)
-        ])
-        
-        topView.addSubview(horizontalStackTopView)
-        horizontalStackTopView.axis = .horizontal
-        horizontalStackTopView.distribution = .fillEqually
-        horizontalStackTopView.spacing = 10
-        
-        NSLayoutConstraint.activate([
-        horizontalStackTopView.topAnchor.constraint(equalTo: topView.topAnchor, constant: 10),
-        horizontalStackTopView.leftAnchor.constraint(equalTo: topView.leftAnchor, constant: 10),
-        horizontalStackTopView.rightAnchor.constraint(equalTo: topView.rightAnchor, constant: -10),
-        //horizontalStackTopView.heightAnchor.constraint(lessThanOrEqualToConstant: 150)
-        ])
-        
-        
-        horizontalStackTopView.addArrangedSubview(companyLogo)
-        horizontalStackTopView.addArrangedSubview(companyNameLabel)
-        horizontalStackTopView.addArrangedSubview(roleNameLabel)
-        //horizontalStackTopView.addArrangedSubview(topRightButton)
-        
-    }
+    //actual content
     
-    //combine the components for the horizontal stack top view and add to the top view
-    //combine the components for the middle view and add to the content view
-    func configureMiddleView() {
-        
-        contentView.addSubview(middleView)
-        
-        NSLayoutConstraint.activate([
-            //the top anchor of the middle view is constrained to the bottom view of the top view
-            middleView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 100),
-            middleView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
-            middleView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
-            //we can't set a bottom contraint because it will mess up the scrolling
-            middleView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
-        
-        middleView.addSubview(horizontalStackMiddleView)
-        horizontalStackMiddleView.axis = .horizontal
-        horizontalStackMiddleView.distribution = .fillEqually
-        horizontalStackMiddleView.spacing = 10
-        
-        NSLayoutConstraint.activate([
-        horizontalStackMiddleView.topAnchor.constraint(equalTo: middleView.topAnchor),
-        horizontalStackMiddleView.leftAnchor.constraint(equalTo: middleView.leftAnchor, constant: 10),
-        horizontalStackMiddleView.rightAnchor.constraint(equalTo: middleView.rightAnchor, constant: -10),
-        horizontalStackMiddleView.bottomAnchor.constraint(equalTo: middleView.bottomAnchor)
-        ])
-        
-        horizontalStackMiddleView.addArrangedSubview(leftLabel)
-        horizontalStackMiddleView.addArrangedSubview(rightLabel)
-        
-        
-    }
+    let hardRequirementsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "J.P. Morgan is a global leader in financial services, providing strategic advice and products to the world’s most prominent corporations, governments, wealthy individuals and institutional investors. Our first-class business in a first-class way approach to serving clients drives everything we do. We strive to build trusted, long-term partnerships to help our clients achieve their business objectives."
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-    //configure the content view (add top and middle views)
-    func configureContentView() {
-        
-        configureTopView()
-        configureMiddleView()
-    }
+    let roleResponsibilitiesLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and rld’s most prominent corporations, governments, wealthy individuals and institutional investors. Our first-class business in a first-class way approach to serving clients drives everything we do. We strive to build trusted, long-term partner m Ipsum Lorem Ipsum is simply dummy text of the printing and rld’s most prominent corporations, governments, wealthy individuals and institutional investors. Our first-class business in a first-class way approach to serving clients drives everything we do. We strive to build trusted, long-term p"
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
+    let softRequirementsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont"
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-    //finally configure and add content view to scroll view
-    func configureUI() {
+    //add and configure the content view to the scrollView
+    
+    func initialConfigurations () {
         
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: middleStackView.bottomAnchor, constant: 20),
             scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
             scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -200,7 +117,91 @@ class DetailedViewController: UIViewController {
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
         ])
         
+    }
+    
+    //step 3 is to create the UI
+    
+    func configureContentView() {
+        
+        //role responsibility title
+        
+        contentView.addSubview(roleResponsibilityTitle)
+        
+        NSLayoutConstraint.activate([
+            roleResponsibilityTitle.topAnchor.constraint(equalTo: contentView.topAnchor),
+            roleResponsibilityTitle.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
+            roleResponsibilityTitle.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
+
+        ])
+        
+        //actual role responsibility info
+        contentView.addSubview(roleResponsibilitiesLabel)
+        
+        NSLayoutConstraint.activate([
+            roleResponsibilitiesLabel.topAnchor.constraint(equalTo: roleResponsibilityTitle.bottomAnchor, constant: 10),
+            roleResponsibilitiesLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
+            roleResponsibilitiesLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
+
+        ])
+        
+        //hard requirements title
+        contentView.addSubview(hardRequirementsTitle)
+        
+        NSLayoutConstraint.activate([
+            hardRequirementsTitle.topAnchor.constraint(equalTo: roleResponsibilitiesLabel.bottomAnchor, constant: 10),
+            hardRequirementsTitle.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
+            hardRequirementsTitle.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
+
+        ])
+        
+        //actual hard requirements info
+        
+        contentView.addSubview(hardRequirementsLabel)
+        
+        NSLayoutConstraint.activate([
+            hardRequirementsLabel.topAnchor.constraint(equalTo: hardRequirementsTitle.bottomAnchor, constant: 10),
+            hardRequirementsLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
+            hardRequirementsLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
+
+        ])
+        
+        //soft requirements title
+        
+        contentView.addSubview(softRequirementsTitle)
+        
+        NSLayoutConstraint.activate([
+            softRequirementsTitle.topAnchor.constraint(equalTo: hardRequirementsLabel.bottomAnchor, constant: 10),
+            softRequirementsTitle.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
+            softRequirementsTitle.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10)
+            ])
+        
+        //actual soft requirements info
+        contentView.addSubview(softRequirementsLabel)
+        
+        NSLayoutConstraint.activate([
+            softRequirementsLabel.topAnchor.constraint(equalTo: softRequirementsTitle.bottomAnchor, constant: 10),
+            softRequirementsLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
+            softRequirementsLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
+            softRequirementsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor )
+        ])
+    }
+    
+    
+    //CONFIGURATIONS
+    
+    
+    //combine the components for the horizontal stack top view and add to the top view
+    //combine the components for the middle view and add to the content view
+    
+    //finally configure and add content view to scroll view
+    func configureUI() {
+        
+        initialConfigurations()
         configureContentView()
     }
 
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: K.showDetailedViewSegue, sender: self)
+    }
 }

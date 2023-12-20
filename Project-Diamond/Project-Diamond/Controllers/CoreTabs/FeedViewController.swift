@@ -12,7 +12,7 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    //this will eventually be taken from the database
     var feedPosts: [FeedPostCard] = [
         FeedPostCard(companyName: "JPMorgan", feedPosttext: "Applications are now open!"),
         FeedPostCard(companyName: "Evercore", feedPosttext: "Applications are now open!"),

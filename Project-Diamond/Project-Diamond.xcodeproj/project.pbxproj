@@ -85,8 +85,8 @@
 		11ADF9CE2B2BE7A40012A85A /* Entrance */ = {
 			isa = PBXGroup;
 			children = (
-				11E0B4642B24DC8300BEB6B0 /* ProfileViewController.swift */,
 				11E0B46B2B251F3000BEB6B0 /* WelcomeViewController.swift */,
+				11E0B4642B24DC8300BEB6B0 /* ProfileViewController.swift */,
 				11E0B46D2B251F3E00BEB6B0 /* RegisterViewController.swift */,
 			);
 			path = Entrance;

@@ -29,5 +29,6 @@ struct K {
     
     static let jobPostCellNibName = "JobPostCell"
     static let feedPostCellNibName = "FeedPostCell"
+    static let showDetailedViewSegue = "showDetailedView"
     
 }
