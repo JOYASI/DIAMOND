@@ -62,7 +62,7 @@ class DetailedViewController: UIViewController {
     let softRequirementsTitle: UILabel = {
         let label = UILabel()
         label.text = "Soft Requirements"
-        label.font = UIFont(name: "Helvetica Neue", size: 30)
+        label.font = UIFont(name: "Helvetica Neue", size: 25)
         label.textColor = .systemCyan
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false

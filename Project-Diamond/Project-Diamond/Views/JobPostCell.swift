@@ -52,16 +52,14 @@ class JobPostCell: UITableViewCell {
     @IBAction func checkmarkPressed(_ sender: UIButton) {
         
         delegate?.checkmarkPressed(with: sender)
-        print("no")
-        
+
     }
     
     @IBAction func bookmarkPressed(_ sender: UIButton) {
 
         delegate?.bookmarkPressed(with: sender)
-        sender.backgroundColor = .systemPink
-        print("yes")
+
         
     }
-     
+    
 }

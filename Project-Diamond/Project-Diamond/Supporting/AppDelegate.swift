@@ -6,9 +6,7 @@
 //
 
 import UIKit
-import FirebaseCore
-import FirebaseFirestore
-import FirebaseAuth
+import Firebase
 
       
 @main
@@ -22,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //part of the initialisation for Firebase
         FirebaseApp.configure()
         
+        //let's create the firebase firestore
+        let db = Firestore.firestore()
+        //test to see if it's been created
+        print(db)
         
         return true
     }

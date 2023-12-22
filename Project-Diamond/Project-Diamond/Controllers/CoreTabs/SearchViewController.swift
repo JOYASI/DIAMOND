@@ -69,6 +69,8 @@ extension SearchViewController: UITableViewDataSource {
         cell.roleNameLabel.text = jobPosts[indexPath.row].roleName
         //here we are setting the delegate of the cell. remember that self is referring to the class -> i.e the SearchViewController
         cell.delegate = self
+        cell.bookmarkButton.tag = indexPath.row
+        cell.checkmarkButton.tag = indexPath.row
         //print(jobPosts[indexPath.row].companyName)
         return cell
         
@@ -81,7 +83,6 @@ extension SearchViewController: UITableViewDelegate, MyTableViewCellDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //this code will be executed when one of the cells is pressed on -> needed for the detailed view later on
-        print(indexPath.row)
         performSegue(withIdentifier: K.goToDetail, sender: self)
         
         //to deselect the cell after it's pressed:
@@ -89,15 +90,21 @@ extension SearchViewController: UITableViewDelegate, MyTableViewCellDelegate {
     }
     
     func checkmarkPressed(with button: UIButton) {
+        
         button.backgroundColor = .systemRed
         //reload the tableview:
         tableView.reloadData()
+
     }
     
     func bookmarkPressed(with button: UIButton) {
+        
+        button.backgroundColor = .systemPink
         //reload the tableview:
         tableView.reloadData()
         
+        print(button.tag)
+        
     }
-
+    
 }
