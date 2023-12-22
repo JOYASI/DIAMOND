@@ -7,9 +7,19 @@
 
 import UIKit
 
-class JobPostCell: UITableViewCell {
-
+protocol MyTableViewCellDelegate: AnyObject {
     
+    func bookmarkPressed(with button: UIButton)
+    
+    func checkmarkPressed(with button: UIButton)
+}
+
+class JobPostCell: UITableViewCell {
+    
+    //each cell has this delegate variable -> in the viewcontroller file, we will set the delegate of the cells to the viewcontroller.
+    weak var delegate: MyTableViewCellDelegate?
+    
+    @IBOutlet weak var checkmarkButton: UIButton!
     @IBOutlet weak var bookmarkButton: UIButton!
     @IBOutlet weak var jobPostBubble: UIView!
     @IBOutlet weak var companyNameLabel: UILabel!
@@ -38,9 +48,20 @@ class JobPostCell: UITableViewCell {
         bookmarkButton.setImage(image, for: .normal)
         bookmarkButton.setImage(imageFilled, for: .selected)
     }
-    @IBAction func bookmarkPressed(_ sender: UIButton) {
-        //does the toggling
-        bookmarkButton.isSelected.toggle()
+    
+    @IBAction func checkmarkPressed(_ sender: UIButton) {
+        
+        delegate?.checkmarkPressed(with: sender)
+        print("no")
+        
     }
     
+    @IBAction func bookmarkPressed(_ sender: UIButton) {
+
+        delegate?.bookmarkPressed(with: sender)
+        sender.backgroundColor = .systemPink
+        print("yes")
+        
+    }
+     
 }

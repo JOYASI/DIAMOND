@@ -67,15 +67,37 @@ extension SearchViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.jobPostCellIdentifier, for: indexPath) as! JobPostCell
         cell.companyNameLabel.text = jobPosts[indexPath.row].companyName
         cell.roleNameLabel.text = jobPosts[indexPath.row].roleName
+        //here we are setting the delegate of the cell. remember that self is referring to the class -> i.e the SearchViewController
+        cell.delegate = self
         //print(jobPosts[indexPath.row].companyName)
         return cell
         
     }
 }
 
-extension SearchViewController: UITableViewDelegate {
+//based on the protocol "MyTableViewCellDelegate" we created, we need to to add the relevant functions so that the SearchViewController conforms to it.
+extension SearchViewController: UITableViewDelegate, MyTableViewCellDelegate {
+
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //this code will be executed when one of the cells is pressed on -> needed for the detailed view later on
+        print(indexPath.row)
+        performSegue(withIdentifier: K.goToDetail, sender: self)
+        
+        //to deselect the cell after it's pressed:
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func checkmarkPressed(with button: UIButton) {
+        button.backgroundColor = .systemRed
+        //reload the tableview:
+        tableView.reloadData()
+    }
+    
+    func bookmarkPressed(with button: UIButton) {
+        //reload the tableview:
+        tableView.reloadData()
+        
     }
 
 }
