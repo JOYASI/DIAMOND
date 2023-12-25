@@ -6,7 +6,9 @@
 //
 
 import UIKit
+import Firebase
 
+      
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -14,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //part of the initialisation for Firebase
+        FirebaseApp.configure()
+        
+        //let's create the firebase firestore
+        let db = Firestore.firestore()
+        //test to see if it's been created
+        print(db)
+        
         return true
     }
 
