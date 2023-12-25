@@ -24,11 +24,13 @@ class ProfileViewController: UIViewController {
             
             navigationController?.popViewController(animated: true)
             
+            //sign out is working in the database but it doens't go to the logout page yet
+            print("SIgned out")
+            
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
         }
         
     }
     
- 
 }

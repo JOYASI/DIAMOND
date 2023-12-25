@@ -1,0 +1,14 @@
+1. setup database to store all data and retrieve from there
+    -> FeedView
+    -> SearchView
+    
+2. search bar in the search for job section
+
+3. search for jobs tableview -> tick and bookmark thing isn't working properly yet
+
+4. profile page whole design process -> including logout segway
+    -> has to show bookmarked jobs and so on
+    
+
+//Ideas
+Was thinking of maybe doing a swiping thing like tinder so the user can swipe on jobs and those that they like end up in their saved/bookmarked.

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1181D0682B38CF0900C8604E /* ToDoList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1181D0672B38CF0900C8604E /* ToDoList.txt */; };
 		11ADF9D12B2BF21C0012A85A /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11ADF9D02B2BF21C0012A85A /* DetailedViewController.swift */; };
 		11E0B44C2B237E0B00BEB6B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0B44B2B237E0B00BEB6B0 /* AppDelegate.swift */; };
 		11E0B44E2B237E0B00BEB6B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0B44D2B237E0B00BEB6B0 /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1181D0672B38CF0900C8604E /* ToDoList.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDoList.txt; sourceTree = "<group>"; };
 		11ADF9D02B2BF21C0012A85A /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		11E0B4482B237E0B00BEB6B0 /* Project-Diamond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Diamond.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E0B44B2B237E0B00BEB6B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		11E0B43F2B237E0B00BEB6B0 = {
 			isa = PBXGroup;
 			children = (
+				1181D0672B38CF0900C8604E /* ToDoList.txt */,
 				11E0B44A2B237E0B00BEB6B0 /* Project-Diamond */,
 				11E0B4492B237E0B00BEB6B0 /* Products */,
 				8D2F141042D33AA6EDFC9A58 /* Pods */,
@@ -252,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1181D0682B38CF0900C8604E /* ToDoList.txt in Resources */,
 				11E0B4582B237E0C00BEB6B0 /* LaunchScreen.storyboard in Resources */,
 				11E0B4832B29C17700BEB6B0 /* FeedPostCell.xib in Resources */,
 				11E0B4782B27D5F500BEB6B0 /* GoogleService-Info.plist in Resources */,
